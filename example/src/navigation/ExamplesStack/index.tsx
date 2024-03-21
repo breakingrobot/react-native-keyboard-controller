@@ -11,6 +11,7 @@ import InteractiveKeyboard from "../../screens/Examples/InteractiveKeyboard";
 import InteractiveKeyboardIOS from "../../screens/Examples/InteractiveKeyboardIOS";
 import KeyboardAnimation from "../../screens/Examples/KeyboardAnimation";
 import KeyboardAvoidingViewExample from "../../screens/Examples/KeyboardAvoidingView";
+import KeyboardAvoidingViewExample2 from "../../screens/Examples/KeyboardAvoidingView2";
 import LottieAnimation from "../../screens/Examples/Lottie";
 import NonUIProps from "../../screens/Examples/NonUIProps";
 import ReanimatedChat from "../../screens/Examples/ReanimatedChat";
@@ -34,6 +35,7 @@ export type ExamplesStackParamList = {
   [ScreenNames.INTERACTIVE_KEYBOARD_IOS]: undefined;
   [ScreenNames.NATIVE_STACK]: undefined;
   [ScreenNames.KEYBOARD_AVOIDING_VIEW]: undefined;
+  [ScreenNames.KEYBOARD_AVOIDING_VIEW2]: undefined;
   [ScreenNames.ENABLED_DISABLED]: undefined;
   [ScreenNames.CLOSE]: undefined;
   [ScreenNames.TEXT_INPUT_MASK]: undefined;
@@ -82,6 +84,9 @@ const options = {
   },
   [ScreenNames.KEYBOARD_AVOIDING_VIEW]: {
     title: "KeyboardAvoidingView",
+  },
+  [ScreenNames.KEYBOARD_AVOIDING_VIEW2]: {
+    title: "KeyboardAvoidingView2",
   },
   [ScreenNames.ENABLED_DISABLED]: {
     title: "Enabled/disabled",
@@ -163,6 +168,11 @@ const ExamplesStack = () => (
       name={ScreenNames.KEYBOARD_AVOIDING_VIEW}
       component={KeyboardAvoidingViewExample}
       options={options[ScreenNames.KEYBOARD_AVOIDING_VIEW]}
+    />
+    <Stack.Screen
+      name={ScreenNames.KEYBOARD_AVOIDING_VIEW2}
+      component={KeyboardAvoidingViewExample2}
+      options={options[ScreenNames.KEYBOARD_AVOIDING_VIEW2]}
     />
     <Stack.Screen
       name={ScreenNames.ENABLED_DISABLED}
