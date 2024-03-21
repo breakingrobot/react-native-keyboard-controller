@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { KeyboardAvoidingView } from "react-native-keyboard-controller";
 
 import styles from "./styles";
 
@@ -22,12 +21,12 @@ const behaviors: Behavior[] = ["padding", "height", "position"];
 
 export default function KeyboardAvoidingViewExample({ navigation }: Props) {
   const [behavior, setBehavior] = useState<Behavior>(behaviors[0]);
-  const [isPackageImplementation, setPackageImplementation] = useState(true);
+  const [isPackageImplementation, setPackageImplementation] = useState(false);
 
   const onSubmitPress = useCallback(
     () =>
       navigation.push(ScreenNames.KEYBOARD_AVOIDING_VIEW2),
-    [],
+    [navigation],
   );
 
   useEffect(() => {
@@ -56,10 +55,6 @@ export default function KeyboardAvoidingViewExample({ navigation }: Props) {
     });
   }, [isPackageImplementation, behavior]);
 
-  const Container = isPackageImplementation
-    ? KeyboardAvoidingView
-    : RNKeyboardAvoidingView;
-
   return (
     <>
       <View style={styles.inner}>
@@ -68,7 +63,7 @@ export default function KeyboardAvoidingViewExample({ navigation }: Props) {
           <Text style={styles.text}>Submit</Text>
         </TouchableOpacity>
       </View>
-      <Container
+      <RNKeyboardAvoidingView
         behavior={behavior}
         contentContainerStyle={styles.container}
         style={styles.content}
@@ -87,7 +82,7 @@ export default function KeyboardAvoidingViewExample({ navigation }: Props) {
             secureTextEntry
           />
         </View>
-      </Container>
+      </RNKeyboardAvoidingView>
     </>
   );
 }

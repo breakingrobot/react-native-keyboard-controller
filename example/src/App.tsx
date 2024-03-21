@@ -40,11 +40,9 @@ export default function App() {
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <GestureHandlerRootView style={styles.root}>
-        <KeyboardProvider statusBarTranslucent>
           <NavigationContainer linking={linking} fallback={spinner}>
             <RootStack />
           </NavigationContainer>
-        </KeyboardProvider>
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
